@@ -1,0 +1,115 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for text */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f493d7;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Hearts animation */
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    transform: rotate(-45deg);
+    animation: float 5s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* Heart shape */
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Random heart animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-700px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 4s;
+}
+
+.heart:nth-child(2) {
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 60%;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    left: 80%;
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
